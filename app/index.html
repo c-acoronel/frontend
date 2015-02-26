@@ -1,0 +1,115 @@
+<!doctype html>
+<html class="no-js">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="ControlExpenses Sample Application">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="shortcut icon" href="images/favicon.png">	
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+  </head>
+  <body ng-app="controlexpensesApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand logo-mini" href="http://www.toptal.com/"></a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar" ng-show="isLoggedIn">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>              
+          <a class="navbar-brand" href="#">ControlExpenses</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse" ng-show="isLoggedIn">
+          <ul class="nav navbar-nav">
+              <li class="active"><a ng-href="#">Home</a></li>
+              <li><a ng-href="#/about">Reports</a></li>
+    		  <li><a ng-href="#/expenses">Expenses</a></li>
+          </ul>
+          <div class="pull-right" ng-controller="LoginController" style="margin-top: 13px;">
+            <button type="submit" class="btn btn-primary btn-xs" title="Log Off" ng-click="logout()">
+                <i class="glyphicon glyphicon-log-out"></i>
+            </button>
+          </div>            
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <!-- Begin page content -->
+    <div class="container">
+        <div ng-view=""></div>
+    </div>
+
+    <footer class="footer">
+      <div class="container">
+          <div class="row">
+            <div class="col-md-1" style="border-right: 1px solid #77A6EA">
+                <a class="logo-footer" href="http://www.toptal.com/"></a>               
+            </div>
+            <div class="col-md-5">
+                <p>Exclusive access to top developers</p>
+            </div>
+            <div class="col-md-6 text-right">
+                <p>© Copyright 2010 - 2014 Toptal, LLC Privacy Policy,Terms of Service</p>
+            </div>
+          </div>
+      </div>
+    </footer>
+
+    <!--[if lt IE 9]>
+    <script src="js/es5-shim/es5-shim.js"></script>
+    <script src="js/json3/lib/json3.min.js"></script>
+    <![endif]-->
+
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+    <script src="bower_components/jquery-ui/jquery-ui.js"></script>
+    <script src="bower_components/ng-grid/build/ng-grid.js"></script>
+    <script src="bower_components/angular-ui-sortable/sortable.js"></script>
+    <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/restangular/dist/restangular.min.js"></script>
+    <script src="bower_components/moment/moment.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/configuration.js"></script>
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/about.js"></script>
+    <script src="scripts/controllers/expenses.js"></script>
+    <script src="scripts/services/ExpenseService.js"></script>
+    <script src="scripts/services/UserService.js"></script>
+    <script src="scripts/modules/authentication/authenticationService.js"></script>
+    <script src="scripts/modules/authentication/authenticationController.js"></script>
+    <script src="scripts/modules/registration/registrationControllers.js"></script>
+    <script src="scripts/modules/registration/registrationServices.js"></script>
+    <!-- endbuild -->
+</body>
+</html>

@@ -1,0 +1,118 @@
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 60px;
+}
+.footer {
+  color: #77A6EA;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  background-color: #426BA7;
+}
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-top: 20px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.navbar-default {
+    border-top: 2px solid #5E89C6;
+}
+
+.navbar-default .navbar-nav > li > a {
+    text-transform: uppercase;
+}
+
+.btn-danger {
+  text-transform: uppercase;
+  border-color: #000;
+}
+
+.btn-primary {
+    color: #fff;
+	border-color: #000;
+    text-transform: uppercase;
+    background-color: #40C18E;
+}
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active,
+    .btn-primary.active,
+    .open .dropdown-toggle.btn-primary {
+        color: #fff;
+		border-color: #000;
+        text-transform: uppercase;
+        background-color: #2BAA77;
+    }
+
+    .btn-primary.disabled, 
+    .btn-primary[disabled], 
+    fieldset[disabled] 
+    .btn-primary, 
+    .btn-primary.disabled:hover, 
+    .btn-primary[disabled]:hover, 
+    fieldset[disabled] 
+    .btn-primary:hover,
+    .btn-primary.disabled:focus, 
+    .btn-primary[disabled]:focus, 
+    fieldset[disabled] 
+    .btn-primary:focus, 
+    .btn-primary.disabled:active, 
+    .btn-primary[disabled]:active, 
+    fieldset[disabled] 
+    .btn-primary:active,
+    .btn-primary.disabled.active,
+    .btn-primary[disabled].active,
+    fieldset[disabled] 
+    .btn-primary.active {
+        text-transform: uppercase;
+        background-color: #40C18E;
+        border-color: #2BAA77;
+    }
+
+.logo-mini {
+    background:     url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6c2tldGNoPSJodHRwOi8vd3d3LmJvaGVtaWFuY29kaW5nLmNvbS9za2V0Y2gvbnMiPjx0aXRsZT5TbGljZSAxPC90aXRsZT48cGF0aCBkPSJNMy44NzEgMTEuNjM4bDUuMTkzLTUuMDUyIDEuMDcgMS4wNDEtNS4xOTQgNS4wNTEtMS4wNjktMS4wNHptMTAuMjUtMy41NDVsLTguNjMtOC4zOTMtMS43NDUgMS42OTcgMy4yMzYgMy4xNDctNi45ODIgNi43OTEgOC42MjkgOC4zOTQgMS43NDUtMS42OTctMy4yMzYtMy4xNDkgNi45ODItNi43ODl6IiBmaWxsPSIjMzg2M0EwIiBza2V0Y2g6dHlwZT0iTVNTaGFwZUdyb3VwIi8+PC9zdmc+");
+    display: inline-block;
+    width: 14px;
+    height: 20px;
+    opacity: 0.9;
+    margin-top: 13px;
+    background-repeat: no-repeat;
+    -webkit-transition-property: -webkit-transform,opacity;
+    transition-property: transform,opacity;
+}
+
+.logo-footer {
+    width: 69.5px;
+    height: 22.5px;
+    display: block;
+    background-image: url(../images/footer-logo.png);
+    -webkit-background-size: 69.5px 22.5px;
+    background-size: 69.5px 22.5px;
+    background-repeat: no-repeat;
+}

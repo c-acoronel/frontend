@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="styles/login.css">
+
+<div ng-show="error" class="alert alert-danger">{{error}}</div>
+
+<form name="form" ng-submit="login()" class="form-signin" role="form">
+    <h2 class="form-signin-heading">Please sign in</h2>
+    
+    <label for="username" class="sr-only">Email Address</label>
+    <input type="email" 
+           name="username" 
+           id="username"
+           class="form-control" 
+           placeholder="Email Address" 
+           ng-model="username" 
+           required="" 
+           autofocus="">
+    <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Email Address is required</span>
+    
+    <label for="password" class="sr-only">Password</label>
+    <input type="password" 
+           name="password"
+           id="password" 
+           class="form-control"
+           placeholder="Password"
+           ng-model="password"
+           required="">
+    <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        
+    <button class="btn btn-lg btn-primary btn-block" type="submit" ng-disabled="form.$invalid || dataLoading">Sign in</button>
+    <img ng-if="dataLoading" src="images/download.gif"/>
+    
+    <button class="btn btn-lg btn-primary btn-block" type="button" ng-click="register()">Register</button>
+</form>
