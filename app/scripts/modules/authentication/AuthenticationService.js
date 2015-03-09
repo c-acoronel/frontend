@@ -2,8 +2,8 @@
  
 angular.module('Authentication')
  
-.factory('AuthenticationService', ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout', 'UserService', 
-    function (Base64, $http, $cookieStore, $rootScope, $timeout, UserService) {
+.factory('AuthenticationService', ['Base64', '$http', '$cookieStore', '$rootScope', '$timeout', 'UserService', 'Restangular', 
+    function (Base64, $http, $cookieStore, $rootScope, $timeout, UserService, Restangular) {
         
         var service = {};
 
@@ -14,7 +14,26 @@ angular.module('Authentication')
         service.Login = function (username, password, callback) {
 
             service.SetCredentials(username, password);
-            $http.get('http://localhost:8081/expenses-server/rest/user/v1.0.0/userEmail/' + username + '/pass/' + password)
+
+            var request = Restangular.one('login').one('v1.0.0');
+            //This is because the API does not follow the HTTP Spec, so we have to PUT to create a new document
+            //_.extend(request, $rootScope.globals);
+            console.log('request ' + JSON.stringify(request, null, '\t'));
+            request.post().then(
+                function(data) {
+                    var response = {
+                    success: true
+                }
+                    UserService.currentUser = data;
+                    callback(response);
+                },
+
+                function(error) {
+                    callback(error);
+                }
+            );
+
+/*            $http.get('http://localhost:8081/expenses-server/rest/login/v1.0.0/' + username + '/pass/' + password)
              .success(function(data) {
                 var response = {
                     success: true                
@@ -24,7 +43,7 @@ angular.module('Authentication')
              })
              .error(function(error) {
                 callback(error);
-                });    
+                });    */
 
         };
 
@@ -34,11 +53,7 @@ angular.module('Authentication')
 
 
         service.isLoggedIn = function () {
-            if (UserService.currentUser != "") {
-                return false;
-            } else {
-                return true;
-            }
+            return (UserService.currentUser != "");
         };        
  
         service.SetCredentials = function (username, password) {

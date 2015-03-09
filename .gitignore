@@ -1,5 +1,19 @@
-node_modules
-dist
-.tmp
-.sass-cache
-bower_components
+#IntelliJ or WebStorm files
+.idea
+*.iml
+
+#Ignore complete folders
+node_modules/
+bower_components/
+.tmp/
+
+#Files
+.sublime-grunt.cache
+*.exe
+*~
+*.swp
+.DS_Store
+.bower/
+*.pid
+*.tgz
+*.log

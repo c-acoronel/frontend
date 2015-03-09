@@ -16,7 +16,7 @@ angular.module('Authentication')
                     AuthenticationService.SetCredentials($scope.username, $scope.password);
                     $location.path('/expenses');
                 } else {
-                    $scope.error = response.message;
+                    $scope.error = response.statusText;
                     $scope.dataLoading = false;
                     $scope.username = "";
                     $scope.password = "";
