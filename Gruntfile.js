@@ -163,7 +163,7 @@ module.exports = function (grunt) {
     // Automatically inject Bower components into the app
     wiredep: {
       options: {
-        cwd: '<%= yeoman.app %>'
+        // cwd: '<%= yeoman.app %>' // Commented to avoid warning while running grunt serve command
       },
       app: {
         src: ['<%= yeoman.app %>/index.html'],
